@@ -7,7 +7,7 @@ from zennit.image import imgify
 import zennit
 from src.datasets.flood_dataset import FloodDataset
 from torch.utils.data import Dataset
-from LCRP.utils.pidnet_canonizers import PIDNetCanonizer, PIDNetBaseCanonizer, EpsilonPlusFlatBasePIDNet, EpsilonPlusFlatforPIDNet, EpsilonPlusFlatMulforPIDNet
+from LCRP.utils.pidnet_canonizers import PIDNetCanonizer, PIDNetBaseCanonizer, EpsilonPlusFlatforPIDNet
 def LRP(x, model, composite_cls, output_index=1, target_class=0):
     model.zero_grad(set_to_none=True)
     if x.grad is not None:
@@ -87,7 +87,7 @@ if __name__=="__main__":
     # --- model / checkpoint
     model_name = "pidnet"
     ckpt_path = "/home/heydari/paper/LCRP/models/flood_model.pt"
-    data_root = "/home/heydari/FHHI-XAI/data/flood_segmentation"
+    data_root = "/home/heydari/data/flood_segmentation/"
     # ========= HACK: prevent get_model()/get_pidnet() from trying to strictly load its OWN checkpoint =========
     # Some internal path calls `model.load_state_dict(torch.load(cfg["ckpt_path"]))` with strict=True,
     # which raises due to "model." prefix or different head. We temporarily force:
@@ -138,7 +138,7 @@ if __name__=="__main__":
     if unexpected:
         print("[load_state_dict] Unexpected keys:", len(unexpected))
         # print(unexpected)  # uncomment for full list
-    root_dir = "/home/heydari/FHHI-XAI/data/flood_segmentation/"
+    root_dir = "/home/heydari/data/flood_segmentation/"
     dataset = FloodDataset(root_dir=root_dir, split="train")
     # dataset = ToTensorDataset(dataset)
     

@@ -8,14 +8,14 @@ What it does :
 4) Checks conservation: sum(input_relevance) == explained logit (pre-softmax / pre-sigmoid).
 
 How to run (inside repo root):
-  python "LRP sanity check.py" --help
+  python "LRP_sanity_check.py" --help
 
 Examples:
   # Random model + random input (no data needed)
-  python "LRP sanity check.py" --random_input --target_class 1 --y 32 --x 64
+  python "LRP_sanity_check.py" --random_input --target_class 1 --y 32 --x 64
 
   # If you have a checkpoint and want to load it
-  python "LRP sanity check.py" --ckpt /path/to/pidnet.pth --random_input --target_class 1 --y 32 --x 64
+  python "LRP_sanity_check.py" --ckpt /path/to/pidnet.pth --random_input --target_class 1 --y 32 --x 64
 
 Notes:
 - PIDNet outputs are usually [B, C, H, W]. y/x must be within that output resolution.

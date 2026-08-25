@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '/home/heydari/paper/12-supp')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '/home/heydari/paper/Segmentation-and-Object-detection-PCX/paper')))
 
 import click
 import numpy as np
@@ -9,12 +9,12 @@ from crp.helper import get_layer_names
 
 from tqdm import tqdm
 
-from datasets import get_dataset
-from models import get_model
+from LCRP.datasets import get_dataset
+from LCRP.models import get_model
 
-from utils.crp import ChannelConcept
-from utils.crp_configs import ATTRIBUTORS, CANONIZERS, VISUALIZATIONS
-from utils.zennit_composites import EpsilonPlusFlat, EpsilonGammaFlat, EpsilonFlat, GradientComposite
+from LCRP.utils.crp import ChannelConcept
+from LCRP.utils.crp_configs import ATTRIBUTORS, CANONIZERS, VISUALIZATIONS
+from LCRP.utils.zennit_composites import EpsilonPlusFlat, EpsilonGammaFlat, EpsilonFlat, GradientComposite
 
 
 @click.command()

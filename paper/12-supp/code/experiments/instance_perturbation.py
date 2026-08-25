@@ -108,7 +108,7 @@ def main(model_name, dataset_name, layer_name, num_samples, batch_size, insertio
     for c in np.arange(0, n_classes):
         try:
             data = torch.load(
-                f"/home/heydari/paper/12-supp/code/results/global_class_concepts/{dataset_name}_onlyflood/{model_name}/{rel_init}/{layer_name}_class_{c}.pth",
+                f"/home/heydari/paper/Segmentation-and-Object-detection-PCX/results/{dataset_name}/{model_name}/{rel_init}/{layer_name}_class_{c}.pth",
                 map_location="cpu",
                 weights_only=False,
             )
@@ -252,7 +252,7 @@ def main(model_name, dataset_name, layer_name, num_samples, batch_size, insertio
     plt.legend()
     plt.xlabel("flipped concepts")
     plt.ylabel("mean logit change")
-    path = f"/home/heydari/paper/12-supp/code/results/instance_perturbation/{dataset_name}_onlyflood/{model_name}/{rel_init}"
+    path = f"/home/heydari/paper/Segmentation-and-Object-detection-PCX/results/instance_perturbation/{dataset_name}/{model_name}/{rel_init}"
     os.makedirs(path, exist_ok=True)
     os.makedirs(path + "/data", exist_ok=True)
     if insertion:
